@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import firebase from './firebase';
 import './App.css';
+import DishForm from './DishForm';
+import ListDishes from './ListDishes';
 
 class App extends Component {
   constructor() {
@@ -11,19 +13,19 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.fetchDishes();
+  }
+
+  fetchDishes = () => {
     const dbRef = firebase.database().ref();
 
     dbRef.on('value', (snapshot) => {
-      console.log(snapshot.val());
-
       const data = snapshot.val();
-
       const dishesArray = [];
 
       for (let propertyName in data) {
         dishesArray.push(data[propertyName]);
       }
-      console.log(dishesArray);
 
       this.setState({
         dishes: dishesArray
@@ -31,18 +33,17 @@ class App extends Component {
     })
   }
 
+  addDish = (name, dish) => {
+    const dbRef = firebase.database().ref();
+    var newDishRef = dbRef.set({ name: dish });
+    this.fetchDishes();
+  }
+
   render() {
     return (
       <div className="App">
-        <h1>List of Dishes</h1>
-
-        <ul>
-          {
-            this.state.dishes.map((dish) => {
-              return <li>{dish}</li>
-            })
-          }
-        </ul>
+        <DishForm addDish={this.addDish}/>
+        <ListDishes dishes={this.state.dishes}/>
       </div>
     );
   }
