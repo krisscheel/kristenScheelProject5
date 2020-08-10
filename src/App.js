@@ -42,6 +42,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>testing deployment</h1>
         <DishForm addDish={this.addDish}/>
         <ListDishes dishes={this.state.dishes}/>
       </div>
