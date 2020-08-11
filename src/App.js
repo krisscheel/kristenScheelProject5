@@ -3,6 +3,7 @@ import firebase from './firebase';
 import './App.css';
 import DishForm from './DishForm';
 import ListDishes from './ListDishes';
+import Counter from './Counter';
 
 class App extends Component {
   constructor() {
@@ -24,7 +25,13 @@ class App extends Component {
       const dishesArray = [];
 
       for (let propertyName in data) {
-        dishesArray.push(data[propertyName]);
+        const dishObject = {
+          id: propertyName,
+          name: data[propertyName]["name"],
+          dish: data[propertyName]["dish"],
+          type: data[propertyName]["type"]
+        }
+        dishesArray.push(dishObject);
       }
 
       this.setState({
@@ -33,18 +40,25 @@ class App extends Component {
     })
   }
 
-  addDish = (name, dish) => {
+  deleteDish = (dishId) => {
     const dbRef = firebase.database().ref();
-    var newDishRef = dbRef.set({ name: dish });
+    dbRef.child(dishId).remove();
+  }
+
+  addDish = (name, dish, type) => {
+    const dbRef = firebase.database().ref();
+    dbRef.push({ name: name, dish: dish, type: type });
     this.fetchDishes();
   }
 
   render() {
     return (
       <div className="App">
-        <h1>testing deployment</h1>
+        <h1>Potluck!</h1>
+        <Counter dishes={this.state.dishes}/>
         <DishForm addDish={this.addDish}/>
-        <ListDishes dishes={this.state.dishes}/>
+        <ListDishes dishes={this.state.dishes} deleteDish={this.deleteDish}/>
+        
       </div>
     );
   }

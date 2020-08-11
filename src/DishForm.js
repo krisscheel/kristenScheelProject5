@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class DishForm extends Component {
   constructor(props) {
     super(props);
-    this.state = { name: 'Name', dish: 'Dish' };
+    this.state = { name: '', dish: '' };
   }
 
   handleNameChangeEvent = (event) => {
@@ -15,9 +15,18 @@ class DishForm extends Component {
   }
 
   handleSubmit = (event) => {
-    //alert('A name was submitted: ' + this.state.name + this.state.dish);
-    this.props.addDish(this.state.name, this.state.dish);
+    this.props.addDish(this.state.name, this.state.dish, this.state.type);
     event.preventDefault();
+    this.setState({
+      name: "",
+      dish: "",
+      type: "appetizer"
+    })
+  }
+
+  selectDishType = (event) => {
+    this.setState({ type: event.target.value });
+    console.log(event.target.value);
   }
 
   render() {
@@ -31,6 +40,12 @@ class DishForm extends Component {
           Dish:
             <input type="text" name="dish" value={this.state.dish} onChange={this.handleDishChangeEvent}/>
         </label>
+        <select id="dishType" name="Type" value={this.state.type} onChange={this.selectDishType}>
+          <option value="appetizer">Appetizer</option>
+          <option value="salad">Salad</option>
+          <option value="main">Main</option>
+          <option value="dessert">Dessert</option>
+        </select>
         <input type="submit" value="Submit" />
       </form>
     )
