@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class DishForm extends Component {
   constructor(props) {
     super(props);
-    this.state = { name: '', dish: '' };
+    this.state = { name: '', dish: '', type: 'appetizer' };
   }
 
   handleNameChangeEvent = (event) => {
@@ -26,7 +26,6 @@ class DishForm extends Component {
 
   selectDishType = (event) => {
     this.setState({ type: event.target.value });
-    console.log(event.target.value);
   }
 
   render() {
