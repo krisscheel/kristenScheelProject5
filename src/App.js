@@ -29,7 +29,8 @@ class App extends Component {
           id: propertyName,
           name: data[propertyName]["name"],
           dish: data[propertyName]["dish"],
-          type: data[propertyName]["type"]
+          type: data[propertyName]["type"],
+          restrictions: data[propertyName]["restrictions"]
         }
         dishesArray.push(dishObject);
       }
@@ -45,9 +46,9 @@ class App extends Component {
     dbRef.child(dishId).remove();
   }
 
-  addDish = (name, dish, type) => {
+  addDish = (name, dish, type, dietaryRestrictions ) => {
     const dbRef = firebase.database().ref();
-    dbRef.push({ name: name, dish: dish, type: type });
+    dbRef.push({ name: name, dish: dish, type: type, restrictions: dietaryRestrictions });
     this.fetchDishes();
   }
 

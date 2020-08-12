@@ -6,6 +6,10 @@ class ListDishes extends Component {
     console.log(props);
   }
 
+  renderDietaryRestrictions = (restrictions) => {
+    return restrictions.join();
+  }
+
   render() {
     return (
       <div>
@@ -14,7 +18,7 @@ class ListDishes extends Component {
           {
             this.props.dishes.map((singleDish) => {
               return (
-              <li key={singleDish.id}>{singleDish.name} {singleDish.dish}
+              <li key={singleDish.id}>{singleDish.name} {singleDish.dish} {this.renderDietaryRestrictions(singleDish.restrictions)}
                 <button onClick={ () => this.props.deleteDish(singleDish.id)}>Delete this dish</button>
                 </li>
               )
