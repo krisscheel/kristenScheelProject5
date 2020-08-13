@@ -65,11 +65,11 @@ class DishForm extends Component {
           <Counter dishes={this.props.dishes} servings={this.props.servings} />
           <form class="dishForm" onSubmit={this.handleSubmit}>
             <div class="formTop">
-              <label class="formLabel formLabelTop">Name: <input class="inputBox" type="text" name="name" value={this.state.name} onChange={this.handleNameChangeEvent}/></label>
-              <label class="formLabel formLabelTop">Dish: <input class="inputBox" type="text" name="dish" value={this.state.dish} onChange={this.handleDishChangeEvent}/></label>
+              <label class="formLabel formLabelTop">Name: <input class="inputBox" type="text" name="name" value={this.state.name} onChange={this.handleNameChangeEvent} required/></label>
+              <label class="formLabel formLabelTop">Dish: <input class="inputBox" type="text" name="dish" value={this.state.dish} onChange={this.handleDishChangeEvent} required/></label>
             </div>
             <select class="dishTypeSelect" id="dishType" name="Type" value={this.state.type} onChange={this.selectDishType}>
-              <option value="chooseOne">select a category</option>
+              <option value="chooseOne" disabled>select a category</option>
               <DishOptions enoughServings={this.enoughServings} dishType={"appetizer"} label={"Appetizer"}/>
               <DishOptions enoughServings={this.enoughServings} dishType={"salad"} label={"Salad"} />
               <DishOptions enoughServings={this.enoughServings} dishType={"main"} label={"Main"} />

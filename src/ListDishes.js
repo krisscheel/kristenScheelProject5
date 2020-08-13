@@ -17,8 +17,9 @@ class ListDishes extends Component {
         <h2>Here's What Everyone's Bringing:</h2>
         <ul>
           {
+            (this.props.dishes.length == 0) ? <h3> Nothing here yet!</h3> :
             this.props.dishes.map((singleDish) => {
-              return (
+              return (  
                     <li key={singleDish.id}>{singleDish.name} {singleDish.dish} {this.renderDietaryRestrictions(singleDish.restrictions)}
                     <button onClick={ () => this.props.deleteDish(singleDish.id)}>Remove this dish</button>
                     </li>
