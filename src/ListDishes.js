@@ -7,7 +7,7 @@ class ListDishes extends Component {
   }
 
   renderDietaryRestrictions = (restrictions) => {
-    return restrictions.join();
+    return restrictions.join(", ");
   }
 
   render() {
