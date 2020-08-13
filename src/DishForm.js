@@ -68,7 +68,7 @@ class DishForm extends Component {
               <label class="formLabel formLabelTop">Name: <input class="inputBox" type="text" name="name" value={this.state.name} onChange={this.handleNameChangeEvent} required/></label>
               <label class="formLabel formLabelTop">Dish: <input class="inputBox" type="text" name="dish" value={this.state.dish} onChange={this.handleDishChangeEvent} required/></label>
             </div>
-            <select class="dishTypeSelect" id="dishType" name="Type" value={this.state.type} onChange={this.selectDishType}>
+            <select class="dishTypeSelect" id="dishType" name="Type" value={this.state.type} onChange={this.selectDishType} required>
               <option value="chooseOne" disabled>select a category</option>
               <DishOptions enoughServings={this.enoughServings} dishType={"appetizer"} label={"Appetizer"}/>
               <DishOptions enoughServings={this.enoughServings} dishType={"salad"} label={"Salad"} />
