@@ -12,7 +12,7 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 *, *:before, *:after {box-sizing: inherit}
 
 /* ======================= GENERAL STYLES ======================== */
- body, h1, h2, h3, p {
+body, h1, h2, h3, p {
   margin: 0;
   padding: 0;
 } 
@@ -72,7 +72,7 @@ li {
 
 .formBox {
   background: url(./images/gingham2.jpg);
-  background-size: 100%;
+  background-size: cover;
   height: 70vh;
   position: relative;
 }
@@ -84,7 +84,6 @@ li {
   margin-right: auto;
   left: 0;
   right: 0;
-  text-align: center;
   padding: 2%;
   height: 120%;
 }
@@ -125,7 +124,7 @@ li {
 }
 
 .formLabelTop {
-font-weight: bold;
+  font-weight: bold;
 }
 
 .formTop {
@@ -170,6 +169,16 @@ font-weight: bold;
   border-radius: 20px;
 }
 
+.submitButton:hover, button:hover {
+  background-color: #fbd5d4;
+  color: #F15B58;
+}
+
+.submitButton:focus, button:focus {
+  background-color: #fbd5d4;
+  color: #F15B58;
+}
+
 /* ======================= DISH LIST STYLES ======================== */
 
 .whatTheyreBringing {
@@ -194,18 +203,12 @@ font-weight: bold;
   margin-right: auto;
   left: 0;
   right: 0;
-  text-align: center;
+  text-align: right;
   box-shadow: 10px 10px #F15B58;
   opacity: 100%;
 }
 
-.whatBringingBox h3 {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 2rem;
-  color: #81807E;
-}
-
-.whatBringingBox li {
+.whatBringingBox h3, li {
   font-family: 'Open Sans', sans-serif;
   font-size: 2rem;
   color: #81807E;
@@ -234,3 +237,116 @@ button {
   padding-top: 50px;
 }
 
+
+/* ======================= MOBILE STYLES ======================== */
+
+@media (max-width: 1400px) {
+  .whatBringingBox h3, li {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .formBoxInterior {
+    height: 100%;
+  }
+  .inputBox {
+    margin-bottom: 5px;
+    border: 1px solid #81807E;
+    width: 150px;
+    height: 25px;
+  }
+  .dishTypeSelect {
+    height: 25px;
+    font-size: 1.5rem;
+  }
+  .whatBringingBox {
+    height: 90%;
+    width: 80%;
+  }
+}
+
+@media (max-width: 900px) {
+  .counter h2 {  
+    font-size: 3rem;
+  }
+  .formBox {
+    height: 50vh;
+  }
+  .formBoxInterior {
+    height: 120%;
+  }
+  .headBox h1 {
+    padding-top: 5%;
+}
+}
+
+@media (max-width: 820px) {
+  .inputBox {
+    margin-bottom: 5px;
+    border: 1px solid #81807E;
+    width: 120px;
+    height: 20px;
+  }
+  .formBoxInterior {
+    width: 80%;
+  }
+    .dishTypeSelect {
+    height: 20px;
+  }
+}
+
+@media (max-width: 750px) {
+  .formBoxInterior {
+    height: 130%;
+  }
+  .whatTheyreBringing {
+    height: 240vh;
+  }
+  .whatBringingBox {
+    height: 94%;
+  }
+}
+
+@media (max-width: 600px) {
+  .whatBringingBox h3, li {
+    font-size: 1.5rem;
+  }
+  .headBox h1 {
+    font-size: 8rem;
+    padding-top: 15%;
+  }
+}
+
+@media (max-width: 525px) {
+.headBox h2 {
+  font-size: 2rem;
+}
+.headBox h1 {
+  font-size: 6rem;
+  padding-top: 25%;
+}
+.whatTheyreBringing {
+    height: 260vh;
+  }
+}
+
+@media (max-width: 410px) {
+ .whatTheyreBringing {
+    height: 280vh;
+  }
+  .headBox h1 {
+    font-size: 4rem;
+    padding-top: 15%;
+  }
+  .formBoxInterior {
+    position: absolute;
+    top: -250px;
+    height: 160%;
+  }
+}
+@media (max-width: 340px) {
+ .whatTheyreBringing {
+    height: 290vh;
+  }
+}
