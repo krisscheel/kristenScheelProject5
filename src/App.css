@@ -86,7 +86,7 @@ li {
   right: 0;
   text-align: center;
   padding: 2%;
-  height: 100%;
+  height: 120%;
 }
 
 .dishForm {
@@ -121,6 +121,7 @@ li {
   font-family: 'Open Sans', sans-serif;
   font-size: 2rem;
   color: #81807E;
+  padding: 10px;
 }
 
 .formLabelTop {
@@ -186,7 +187,7 @@ font-weight: bold;
 
 .whatBringingBox {
   height: 90%;
-  padding-top: 40px;
+  padding-top: 60px;
   position: absolute;
   top: 80px;
   margin-left: auto;
@@ -199,6 +200,12 @@ font-weight: bold;
 }
 
 .whatBringingBox h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2rem;
+  color: #81807E;
+}
+
+.whatBringingBox li {
   font-family: 'Open Sans', sans-serif;
   font-size: 2rem;
   color: #81807E;
