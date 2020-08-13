@@ -1,15 +1,26 @@
 import React, { Component } from 'react';
 import firebase from './firebase';
 import './App.css';
+import Header from './Header';
 import DishForm from './DishForm';
 import ListDishes from './ListDishes';
-import Counter from './Counter';
+import Footer from './Footer';
+
 
 class App extends Component {
   constructor() {
     super();
+
+    const servings = {
+      appetizer: 5,
+      salad: 5, 
+      main: 5,
+      dessert: 5
+    };
+
     this.state = {
-      dishes: []
+      dishes: [],
+      servings: servings
     }
   }
 
@@ -25,12 +36,13 @@ class App extends Component {
       const dishesArray = [];
 
       for (let propertyName in data) {
+        const restrictions = data[propertyName]["restrictions"] == null ? [] : data[propertyName]["restrictions"];
         const dishObject = {
           id: propertyName,
           name: data[propertyName]["name"],
           dish: data[propertyName]["dish"],
           type: data[propertyName]["type"],
-          restrictions: data[propertyName]["restrictions"]
+          restrictions: restrictions
         }
         dishesArray.push(dishObject);
       }
@@ -55,11 +67,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Potluck!</h1>
-        <Counter dishes={this.state.dishes}/>
-        <DishForm addDish={this.addDish}/>
+        <Header />
+        <DishForm addDish={this.addDish} dishes={this.state.dishes} servings={this.state.servings}/>
         <ListDishes dishes={this.state.dishes} deleteDish={this.deleteDish}/>
-        
+        <Footer />
       </div>
     );
   }

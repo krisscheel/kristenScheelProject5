@@ -7,10 +7,11 @@ class Counter extends Component {
   }
 
   render() {
-    let appetizers = 5;
-    let salads = 5;
-    let mains = 5;
-    let desserts = 5;
+    const servings = this.props.servings; 
+    let appetizers = servings.appetizer;
+    let salads = servings.salad;
+    let mains = servings.main;
+    let desserts = servings.dessert;
 
     const dishes = this.props.dishes;
     for (let i in this.props.dishes) {
@@ -26,11 +27,9 @@ class Counter extends Component {
     }
 
     return (
-    <div>
-      <h2>We still need {appetizers} appetizers</h2>
-      <h2>We still need {salads} salads</h2>
-      <h2>We still need {mains} mains</h2>
-      <h2>We still need {desserts} desserts</h2>
+    <div class="counter">
+      <h2>Sign Up To Bring a Dish</h2>
+      <h3>We need: {appetizers} appetizers, {salads} salads, {mains} mains & {desserts} desserts.</h3>
     </div>
     )
   }
