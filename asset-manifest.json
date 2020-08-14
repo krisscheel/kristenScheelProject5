@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/kristenScheelProject5/static/css/main.21568ee4.chunk.css",
+    "main.css": "/kristenScheelProject5/static/css/main.71af0a9a.chunk.css",
     "main.js": "/kristenScheelProject5/static/js/main.ca346f12.chunk.js",
     "main.js.map": "/kristenScheelProject5/static/js/main.ca346f12.chunk.js.map",
     "runtime-main.js": "/kristenScheelProject5/static/js/runtime-main.98a763ae.js",
@@ -8,16 +8,16 @@
     "static/js/2.99355214.chunk.js": "/kristenScheelProject5/static/js/2.99355214.chunk.js",
     "static/js/2.99355214.chunk.js.map": "/kristenScheelProject5/static/js/2.99355214.chunk.js.map",
     "index.html": "/kristenScheelProject5/index.html",
-    "precache-manifest.f53bd59c4829dd61860fb903fca070df.js": "/kristenScheelProject5/precache-manifest.f53bd59c4829dd61860fb903fca070df.js",
+    "precache-manifest.ac5ed1337bc8f5c7644f9210f2bcb872.js": "/kristenScheelProject5/precache-manifest.ac5ed1337bc8f5c7644f9210f2bcb872.js",
     "service-worker.js": "/kristenScheelProject5/service-worker.js",
-    "static/css/main.21568ee4.chunk.css.map": "/kristenScheelProject5/static/css/main.21568ee4.chunk.css.map",
+    "static/css/main.71af0a9a.chunk.css.map": "/kristenScheelProject5/static/css/main.71af0a9a.chunk.css.map",
     "static/js/2.99355214.chunk.js.LICENSE.txt": "/kristenScheelProject5/static/js/2.99355214.chunk.js.LICENSE.txt",
     "static/media/App.css": "/kristenScheelProject5/static/media/potluckdishes.7f60d16d.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.98a763ae.js",
     "static/js/2.99355214.chunk.js",
-    "static/css/main.21568ee4.chunk.css",
+    "static/css/main.71af0a9a.chunk.css",
     "static/js/main.ca346f12.chunk.js"
   ]
 }
