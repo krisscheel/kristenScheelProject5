@@ -11,6 +11,7 @@ class App extends Component {
   constructor() {
     super();
 
+    // setting the number of dishes of each type (appetizer, salad, main, dessert) needed.
     const servings = {
       appetizer: 5,
       salad: 5, 
@@ -24,10 +25,12 @@ class App extends Component {
     }
   }
 
+  //when component is rendered, run the function to get the dishes data from firebase
   componentDidMount() {
     this.fetchDishes();
   }
 
+// function to get dishes data from firebase
   fetchDishes = () => {
     const dbRef = firebase.database().ref();
 
@@ -36,6 +39,7 @@ class App extends Component {
       const dishesArray = [];
 
       for (let propertyName in data) {
+        //pushing empty array to firebase returns "null", replacing null value with empty array.
         const restrictions = data[propertyName]["restrictions"] == null ? [] : data[propertyName]["restrictions"];
         const dishObject = {
           id: propertyName,
@@ -53,15 +57,16 @@ class App extends Component {
     })
   }
 
+  //function to remove dishes from firebase
   deleteDish = (dishId) => {
     const dbRef = firebase.database().ref();
     dbRef.child(dishId).remove();
   }
 
+  //function to add dishes to firebase
   addDish = (name, dish, type, dietaryRestrictions ) => {
     const dbRef = firebase.database().ref();
     dbRef.push({ name: name, dish: dish, type: type, restrictions: dietaryRestrictions });
-    this.fetchDishes();
   }
 
   render() {
