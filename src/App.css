@@ -339,7 +339,7 @@ button {
 }
 
 @media (max-width: 410px) {
- .whatTheyreBringing {
+  .whatTheyreBringing {
     height: 350vh;
   }
   .headBox h1 {
