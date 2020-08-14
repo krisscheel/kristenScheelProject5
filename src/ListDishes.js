@@ -18,7 +18,9 @@ class ListDishes extends Component {
     return (
       <div class="whatTheyreBringing">
           <div class="box whatBringingBox wrapper">
-          <h2>Here's What Everyone's Bringing:</h2>
+            <div class="headingBringing">
+              <h2>Here's What Everyone's Bringing:</h2>
+            </div>
               <ul>
                 {
                   (this.props.dishes.length == 0) ? <h3> No dishes yet. Be the first to sign up!</h3> :

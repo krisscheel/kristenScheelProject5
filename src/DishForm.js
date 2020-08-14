@@ -87,18 +87,20 @@ class DishForm extends Component {
               </select>
               <div class="checkboxes">
                 <h3>Check all that apply to your dish:</h3>
-                <div class="formLabel">
-                  <label for="nut-free">nut-free </label><input type="checkbox" id="nut-free" name="nut-free" value="nut-free" onChange={this.handleDietaryChange} checked={this.state.dietaryRestrictions.includes("nut-free")}/>
-                </div>
-                <div class="formLabel">
-                  <label for="vegan">vegan </label><input type="checkbox" id="vegan" name="vegan" value="vegan" onChange={this.handleDietaryChange} checked={this.state.dietaryRestrictions.includes("vegan")}/>
-                </div>
-                <div class="formLabel">
-                  <label for="vegetarian">vegetarian </label><input type="checkbox" id="vegetarian" name="vegetarian" value="vegetarian" onChange={this.handleDietaryChange} checked={this.state.dietaryRestrictions.includes("vegetarian")}/>
-                </div>
-                <div class="formLabel">
-                  <label for="gluten-free">gluten-free </label><input type="checkbox" id="gluten-free" name="gluten-free" value="gluten-free" onChange={this.handleDietaryChange} checked={this.state.dietaryRestrictions.includes("gluten-free")}/>
-                </div>
+                  <div class="checksOnly">
+                    <div class="formLabel">
+                      <label for="nut-free">nut-free </label><input type="checkbox" id="nut-free" name="nut-free" value="nut-free" onChange={this.handleDietaryChange} checked={this.state.dietaryRestrictions.includes("nut-free")}/>
+                    </div>
+                    <div class="formLabel">
+                      <label for="vegan">vegan </label><input type="checkbox" id="vegan" name="vegan" value="vegan" onChange={this.handleDietaryChange} checked={this.state.dietaryRestrictions.includes("vegan")}/>
+                    </div>
+                    <div class="formLabel">
+                      <label for="vegetarian">vegetarian </label><input type="checkbox" id="vegetarian" name="vegetarian" value="vegetarian" onChange={this.handleDietaryChange} checked={this.state.dietaryRestrictions.includes("vegetarian")}/>
+                    </div>
+                    <div class="formLabel">
+                      <label for="gluten-free">gluten-free </label><input type="checkbox" id="gluten-free" name="gluten-free" value="gluten-free" onChange={this.handleDietaryChange} checked={this.state.dietaryRestrictions.includes("gluten-free")}/>
+                    </div>
+                  </div>
                 <input class="submitButton" type="submit" value="Submit" />
               </div>
             </form>
