@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class DishOptions extends Component {
-render() {
-  if (this.props.enoughServings(this.props.dishType)) {
+const DishOptions = (props) => {
+  if (props.enoughServings(props.dishType)) {
     return (
-      <option value={this.props.dishType} disabled>{this.props.label}</option>
-      );
+      <option value={props.dishType} disabled>{props.label}</option>
+    );
   } else {
     return (
-      <option value={this.props.dishType}>{this.props.label}</option>
-      );
-    }  
+      <option value={props.dishType}>{props.label}</option>
+    );
   }
 }
 
